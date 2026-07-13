@@ -3,6 +3,11 @@ from pathlib import Path
 from datetime import timedelta
 
 try:
+    import dj_database_url
+except ImportError:
+    dj_database_url = None
+
+try:
     from dotenv import load_dotenv
     load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / '.env', override=True)
 except ImportError:
@@ -69,23 +74,31 @@ TEMPLATES = [
 WSGI_APPLICATION = 'superhero_backend.wsgi.application'
 
 # Database Setup
-# Retrieve details from env
-DB_NAME = os.environ.get('DB_NAME', 'superhero_store')
-DB_USER = os.environ.get('DB_USER', 'root')
-DB_PASSWORD = os.environ.get('DB_PASSWORD', 'mysql1711')
-DB_HOST = os.environ.get('DB_HOST', 'localhost')
-DB_PORT = os.environ.get('DB_PORT', '3306')
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': DB_HOST,
-        'PORT': DB_PORT,
+if os.environ.get('DATABASE_URL') and dj_database_url:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600
+        )
     }
-}
+else:
+    # Retrieve details from env local fallback
+    DB_NAME = os.environ.get('DB_NAME', 'superhero_store')
+    DB_USER = os.environ.get('DB_USER', 'root')
+    DB_PASSWORD = os.environ.get('DB_PASSWORD', 'mysql1711')
+    DB_HOST = os.environ.get('DB_HOST', 'localhost')
+    DB_PORT = os.environ.get('DB_PORT', '3306')
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST': DB_HOST,
+            'PORT': DB_PORT,
+        }
+    }
 
 # Custom User Model
 AUTH_USER_MODEL = 'authentication.User'
