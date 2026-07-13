@@ -1,0 +1,44 @@
+# Environment and secrets
+.env
+*.env
+backend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+backend/venv/
+venv/
+.venv/
+
+# Django/local runtime
+*.log
+backend/staticfiles/
+backend/media/
+*.sqlite3
+db.sqlite3
+
+# Node
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local tooling
+.qodo/
+.agents/
+
+# Local Git repair artifacts
+_git/
+_git2/
+.git.broken/
+.git.failed/
+Ecom/

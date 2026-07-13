@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultX - Security Clearance Verification</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #05050f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0b091a;
+            border: 1px solid #16122d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.15);
+        }
+        .header {
+            background: linear-gradient(135deg, #00f0ff 0%, #bd00ff 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #05050f;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .content {
+            padding: 40px 30px;
+            line-height: 1.6;
+        }
+        .greeting {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00f0ff;
+            margin-bottom: 20px;
+        }
+        .message {
+            color: #cbd5e1;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+        .otp-container {
+            background-color: #05050f;
+            border: 2px solid #00f0ff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+        }
+        .otp-code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            margin: 0;
+        }
+        .expiry-text {
+            color: #ff0055;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .warning-text {
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 30px;
+            border-top: 1px solid #16122d;
+            padding-top: 20px;
+        }
+        .footer {
+            background-color: #05050f;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #16122d;
+        }
+        .footer p {
+            color: #475569;
+            font-size: 11px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <div class="container">
+        <div class="header">
+            <h1>VAULTX SECURITY</h1>
+        </div>
+        <div class="content">
+            <div class="greeting">SECURE CLEARANCE PROTOCOL</div>
+            <div class="message">
+                Greetings Operative,<br><br>
+                A security clearance verification request has been initiated for the account associated with <strong>{{ email }}</strong>. 
+                Use the following 6-digit authorization code to complete your protocol.
+            </div>
+            
+            <div class="otp-container">
+                <div class="otp-code">{{ otp }}</div>
+                <div class="expiry-text">⚠️ EXPIRES IN {{ expires_in }} MINUTES</div>
+            </div>
+            
+            <div class="message">
+                Please enter this code on the verification screen. If you did not request this, please ignore this email or notify your system administrator immediately to protect your clearance dossier.
+            </div>
+            
+            <div class="warning-text">
+                This is an automated transmission. Please do not reply directly to this mail coordinates.
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2026 VaultX Multiverse Initiative. Classified Level 1 Clearance Required.</p>
+        </div>
+    </div>
+    <br><br>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to VaultX, Recruit!</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #05050f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0b091a;
+            border: 1px solid #16122d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(189, 0, 255, 0.15);
+        }
+        .header {
+            background: linear-gradient(135deg, #bd00ff 0%, #00f0ff 100%);
+            padding: 35px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            padding: 40px 30px;
+            line-height: 1.6;
+        }
+        .greeting {
+            font-size: 20px;
+            font-weight: bold;
+            color: #bd00ff;
+            margin-bottom: 15px;
+        }
+        .message {
+            color: #cbd5e1;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+        .feature-grid {
+            margin: 30px 0;
+        }
+        .feature-card {
+            background-color: #16122d;
+            border-left: 4px solid #00f0ff;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+        }
+        .feature-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #00f0ff;
+            margin-bottom: 5px;
+        }
+        .feature-desc {
+            color: #94a3b8;
+            font-size: 13px;
+            margin: 0;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 35px 0 20px 0;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #00f0ff 0%, #0088ff 100%);
+            color: #05050f;
+            text-decoration: none;
+            padding: 14px 30px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .footer {
+            background-color: #05050f;
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #16122d;
+        }
+        .footer p {
+            color: #475569;
+            font-size: 11px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <div class="container">
+        <div class="header">
+            <h1>WELCOME TO VAULTX</h1>
+        </div>
+        <div class="content">
+            <div class="greeting">Access Granted, Agent {{ username }}!</div>
+            <div class="message">
+                Recruit, your security clearance credentials have been successfully authorized. 
+                Welcome to <strong>VaultX</strong> — the ultimate command hub for multiverse defenders. 
+                We thank you for joining our protective ranks!
+            </div>
+            
+            <div class="message" style="font-weight: bold; color: #ffffff;">YOUR OPERATIVE ABILITIES:</div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-title">🛡️ Multiverse Catalog</div>
+                    <p class="feature-desc">Access class-1 gear, protective nanotech armor suits, and weapons sourced from alternate realities.</p>
+                </div>
+                <div class="feature-card" style="border-left-color: #bd00ff;">
+                    <div class="feature-title">⚡ High-Speed Teleport Checkout</div>
+                    <p class="feature-desc">Order gear and teleport items directly to your coordinates in real-time with zero friction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-title">🔧 Admin HQ Support</div>
+                    <p class="feature-desc">Raise urgent support tickets and query headquarters regarding operational glitches.</p>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="http://localhost:5173/login" class="cta-btn">Access Command Dashboard</a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>VaultX Multiverse Superhero Store Inc. All Rights Restricted.</p>
+            <p>Confidential system dossier transmitted to {{ email }}.</p>
+        </div>
+    </div>
+    <br><br>
+</body>
+</html>
